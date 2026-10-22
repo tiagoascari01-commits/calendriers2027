@@ -430,6 +430,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+fbq.disablePushState = true; // não dispara PageView de novo em cliques/âncoras
 fbq('init', '1827860101739943');
 fbq('track', 'PageView');
 fbq('track', 'ViewContent');
@@ -834,6 +835,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
     if(!open)item.classList.add('open');
   });
+});
+
+
+// Botões com âncora (#planos): rolam sem mudar a URL, para o Pixel não contar outro PageView
+document.addEventListener('click',function(e){
+  var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+  if(!a)return;
+  var id=a.getAttribute('href');
+  e.preventDefault();
+  if(id.length>1){var alvo=document.querySelector(id);if(alvo)alvo.scrollIntoView({behavior:'smooth',block:'start'});}
 });
 
 // Upsell no clique do Básico
