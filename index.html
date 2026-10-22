@@ -670,7 +670,7 @@ body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-se
           <li><i class="fa-solid fa-gift"></i>500 Gabarits de Boîtes Décor</li>
           <li><i class="fa-solid fa-gift"></i>500 Gabarits de Fête</li>
         </ul>
-        <a class="btn" id="btn-premium" href="https://pay.hotmart.com/J106734432Y?off=dl6sk0fl&amp;checkoutMode=10&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term="><i class="fa-solid fa-cart-shopping"></i>Je veux le Kit Premium</a>
+        <a class="btn" id="btn-premium" href="https://pay.hotmart.com/N108148992I?off=w2pfqmed"><i class="fa-solid fa-cart-shopping"></i>Je veux le Kit Premium</a>
         <div class="cta-reforco">
           <div class="rf-line"><i class="fa-solid fa-shield-heart"></i> Garantie de 30 jours • Accès immédiat et numérique</div>
           <div class="rf-pay"><i class="fa-brands fa-pix"></i> <i class="fa-solid fa-lock"></i> <span>Carte bancaire • Achat 100 % sécurisé</span></div>
@@ -757,8 +757,8 @@ body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-se
       <li><i class="fa-solid fa-check"></i>Support prioritaire et garantie de 30 jours</li>
     </ul>
     <p class="up-save">+ Économisez 22,00&nbsp;€ aujourd’hui</p>
-    <a class="btn" href="https://pay.hotmart.com/J106734432Y?off=p881p28k&amp;checkoutMode=10&amp;utm_source=organic&amp;utm_campaign=&amp;utm_medium=&amp;utm_content=&amp;utm_term="><i class="fa-solid fa-star"></i>Je veux le kit complet pour 7,90&nbsp;€</a>
-    <button class="decline" id="upsell-decline">Je ne veux pas la réduction</button>
+    <a class="btn" href="https://pay.hotmart.com/N108148992I?off=u2p1316m"><i class="fa-solid fa-star"></i>Je veux le kit complet pour 7,90&nbsp;€</a>
+    <button class="decline" id="upsell-decline" data-checkout-recusa="https://pay.hotmart.com/N108148992I?off=ryh5raez">Je ne veux pas la réduction</button>
   </div>
 </div>
 
@@ -882,7 +882,7 @@ basico.addEventListener('click',function(e){
 document.getElementById('upsell-close').addEventListener('click',function(){overlay.classList.remove('show')});
 document.getElementById('upsell-decline').addEventListener('click',function(){
   overlay.classList.remove('show');
-  irPara(BASICO_CHECKOUT); // checkout do Básico, com parâmetros
+  irPara(this.getAttribute('data-checkout-recusa')); // link do botão de recusa, com parâmetros
 });
 
 // Todos os links <a> que levam para outra página (checkout Premium, upsell e qualquer outro)
